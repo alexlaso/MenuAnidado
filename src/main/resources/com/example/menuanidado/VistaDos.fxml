@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<StackPane fx:id="pestaña" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaDosController">
+   <children>
+      <Pane id="fondo" fx:id="fondo" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="TOP_CENTER" />
+      <ImageView fx:id="iconoJonDoe" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="10.0" />
+         </StackPane.margin></ImageView>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label id="Nombre" text="Nombre: Jon Doe" />
+            <Label id="Correo" fx:id="correo" text="Correo: jondoe@example.com" />
+            <Label id="Otros" fx:id="fecha" text="Fecha de nacimiento: 01/01/1996" />
+         </children>
+      </VBox>
+      <VBox fx:id="desplegable" maxWidth="110.0" StackPane.alignment="TOP_LEFT">
+         <children>
+            <Button fx:id="btnTemaOscuro" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cambiarOscuro" text="Tema Oscuro" />
+            <Button fx:id="btnTemaClaro" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cambiarClaro" text="Tema Claro" />
+            <Button fx:id="btnSalir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrar" text="Salir" />
+            <ToggleButton fx:id="btnCambio" mnemonicParsing="false" onAction="#cambiarTema" text="Cambiar Tema" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <FontIcon id="icono" iconLiteral="fas-sun" />
+               </graphic>
+            </ToggleButton>
+         </children>
+      </VBox>
+      <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#despliegue" text="Menú" StackPane.alignment="TOP_LEFT" />
+   </children>
+</StackPane>

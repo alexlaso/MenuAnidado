@@ -1,0 +1,11 @@
+.label {
+    -fx-text-fill: white;
+}
+
+#fondo {
+    -fx-background-color:#303030;
+}
+
+#icono {
+    -fx-icon-code: fas-moon;
+}

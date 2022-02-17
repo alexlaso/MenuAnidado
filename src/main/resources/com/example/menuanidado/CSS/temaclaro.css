@@ -1,0 +1,11 @@
+.label {
+    -fx-text-fill: black;
+}
+
+#fondo {
+    -fx-background-color: #ffffff;
+}
+
+#icono {
+    -fx-icon-code: fas-sun;
+}
