@@ -27,15 +27,11 @@ public class VistaDosController implements Initializable {
     @FXML
     VBox desplegable;
     @FXML
-    Button btnMenu, btnSalir, btnTemaOscuro, btnTemaClaro;
+    Button btnMenu, btnSalir;
     @FXML
     ToggleButton btnCambio;
     @FXML
-    Label nombre, correo, fecha;
-    @FXML
-    StackPane pestaña;
-
-    Scene scene;
+    StackPane ventana;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,32 +44,14 @@ public class VistaDosController implements Initializable {
     }
 
     @FXML
-    private void cambiarOscuro(){
-        fondo.setBackground(new Background(new BackgroundFill(Color.rgb(30,30,30),null,null)));
-        nombre.setTextFill(Color.WHITE);
-        correo.setTextFill(Color.WHITE);
-        fecha.setTextFill(Color.WHITE);
-        despliegue();
-    }
-
-    @FXML
-    private void cambiarClaro(){
-        fondo.setBackground(new Background(new BackgroundFill(Color.rgb(255,255,255),null,null)));
-        nombre.setTextFill(Color.BLACK);
-        correo.setTextFill(Color.BLACK);
-        fecha.setTextFill(Color.BLACK);
-        despliegue();
-    }
-
-    @FXML
     private void cambiarTema(){
         if(!isClaro){
-            fondo.getStylesheets().clear();
-            fondo.getStylesheets().add(this.getClass().getResource("CSS/temaclaro.css").toExternalForm());
+            ventana.getStylesheets().clear();
+            ventana.getStylesheets().add(this.getClass().getResource("CSS/temaclaro.css").toExternalForm());
             isClaro=true;
         }else{
-            fondo.getStylesheets().clear();
-            fondo.getStylesheets().add(this.getClass().getResource("CSS/temaoscuro.css").toExternalForm());
+            ventana.getStylesheets().clear();
+            ventana.getStylesheets().add(this.getClass().getResource("CSS/temaoscuro.css").toExternalForm());
             isClaro=false;
         }
         despliegue();
