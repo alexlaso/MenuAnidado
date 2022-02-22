@@ -4,13 +4,9 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
@@ -20,9 +16,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.net.http.*;
 import java.util.ResourceBundle;
 
 public class VistaPrincipalController implements Initializable {
@@ -33,13 +27,15 @@ public class VistaPrincipalController implements Initializable {
     @FXML
     private VistaGraficaController vistaGraficaController;
     @FXML
+    private VistaTablaController vistaTablaController;
+    @FXML
     private VBox desplegable;
     @FXML
     private Button btnMenu, btnSalir;
     @FXML
     private ToggleButton btnCambio;
     @FXML
-    private StackPane ventana, vistaDosAnidada, vistaGraficaAnidada;
+    private StackPane ventana, vistaDosAnidada, vistaGraficaAnidada, vistaTablaAnidada;
     @FXML
     private ListView<Persona> listView;
     private ObservableList<Persona> listaPersonas;
@@ -93,12 +89,14 @@ public class VistaPrincipalController implements Initializable {
         vistaDosAnidada.setVisible(true);
     }
 
+    @FXML
     private void vistaGrafica(){
         vistaGraficaAnidada.setVisible(true);
         vistaGraficaController.cargarDatosPieChartGenero(listaPersonas);
         vistaGraficaController.cargarDatosPieChartEspecie(listaPersonas);
     }
 
+    @FXML
     private void vistaTabla(){
         vistaTablaAnidada.setVisible(true);
         vistaTablaController.cargarTabla(listaPersonas);

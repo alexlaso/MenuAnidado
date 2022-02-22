@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="vistaTablaAnidada" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaTablaController">
+   <children>
+      <TableView fx:id="tablaPersonas" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="55.0" text="Id" />
+          <TableColumn fx:id="colNombre" prefWidth="223.0" text="%colNombre" />
+            <TableColumn fx:id="colEstado" prefWidth="85.0" text="%colEst" />
+            <TableColumn fx:id="colEspecie" prefWidth="106.0" text="%colEsp" />
+            <TableColumn fx:id="colGenero" prefWidth="130.0" text="%colGen" />
+        </columns>
+      </TableView>
+   </children>
+</StackPane>
