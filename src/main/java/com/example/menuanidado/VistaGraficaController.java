@@ -8,7 +8,7 @@ import javafx.scene.layout.StackPane;
 
 public class VistaGraficaController {
     @FXML
-    private StackPane vistaGraficaAnidada;
+    private StackPane vistaGrafica;
     @FXML
     private PieChart graficaGenero, graficaEspecie;
 
@@ -59,4 +59,6 @@ public class VistaGraficaController {
         graficaEspecie.setClockwise(false);
 
     }
+    @FXML
+    private void volverPrincipalG(){vistaGrafica.setVisible(false);}
 }

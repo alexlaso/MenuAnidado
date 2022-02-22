@@ -6,20 +6,47 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<StackPane id="porejemplo" fx:id="ventana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" stylesheets="@CSS/temaclaro.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaDosController">
+<StackPane id="porejemplo" fx:id="vistaDos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: white;" stylesheets="@CSS/temaclaro.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaDosController">
    <children>
       <Pane id="fondo" fx:id="fondo" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="TOP_CENTER" />
-      <ImageView fx:id="iconoJonDoe" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
-         <StackPane.margin>
-            <Insets top="10.0" />
-         </StackPane.margin></ImageView>
       <VBox id="letras" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Label id="quieromorir" fx:id="nombrePersona" text="nombre" />
-            <Label id="Correo" fx:id="estadoPersona" text="estado" />
-            <Label id="Otros" fx:id="especiePersona" text="especie" />
-            <Label fx:id="generoPersona" text="genero" />
+            <Label id="quieromorir" fx:id="nombrePersona" text="nombre">
+               <graphic>
+                  <FontIcon id="iconNom" iconLiteral="far-user" />
+               </graphic>
+            </Label>
+            <Label id="Correo" fx:id="estadoPersona" text="estado">
+               <graphic>
+                  <FontIcon id="iconEst" iconLiteral="far-tired" />
+               </graphic>
+            </Label>
+            <Label id="Otros" fx:id="especiePersona" text="especie">
+               <graphic>
+                  <FontIcon id="iconEsp" iconLiteral="fab-jedi-order" />
+               </graphic>
+            </Label>
+            <Label fx:id="generoPersona" text="genero">
+               <graphic>
+                  <FontIcon id="iconGen" iconLiteral="fas-helicopter" />
+               </graphic>
+            </Label>
          </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets top="35.0" />
+         </padding>
       </VBox>
+      <ImageView fx:id="imagenPersona" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="35.0" />
+         </StackPane.margin></ImageView>
+      <Button fx:id="btnAtrasT" mnemonicParsing="false" onAction="#volverPrincipalT" text="%btnAtras" StackPane.alignment="TOP_LEFT">
+         <graphic>
+            <FontIcon iconLiteral="fas-chevron-left" />
+         </graphic>
+      </Button>
    </children>
 </StackPane>

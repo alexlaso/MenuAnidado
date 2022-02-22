@@ -22,24 +22,23 @@ public class VistaDosController{
     @FXML
     Pane fondo;
     @FXML
-    ImageView iconoJonDoe;
-
+    ImageView imagenPersona;
     @FXML
-    StackPane ventana;
+    StackPane vistaDos;
     @FXML
     Label nombrePersona, estadoPersona, especiePersona, generoPersona;
 
 
     @FXML
-    private void volverPrincipal(){ventana.setVisible(false);}
+    private void volverPrincipalT(){vistaDos.setVisible(false);}
 
      public void cargarPersona(Persona persona){
         Image image = new Image(persona.getImagen());
-        iconoJonDoe.setImage(image);
+        imagenPersona.setImage(image);
         nombrePersona.setText(persona.getNombre());
         estadoPersona.setText(persona.getEstado());
         especiePersona.setText(persona.getEspecie());
-        generoPersona.setText(persona.getEspecie());
+        generoPersona.setText(persona.getGenero());
     }
 
 

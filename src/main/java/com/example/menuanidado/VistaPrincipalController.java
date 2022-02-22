@@ -35,25 +35,27 @@ public class VistaPrincipalController implements Initializable {
     @FXML
     private ToggleButton btnCambio;
     @FXML
-    private StackPane ventana, vistaDosAnidada, vistaGraficaAnidada, vistaTablaAnidada;
+    private StackPane vistaDos, vistaGrafica, vistaTabla, vistaPrincipal;
     @FXML
     private ListView<Persona> listView;
     private ObservableList<Persona> listaPersonas;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        vistaDosAnidada.setVisible(false);
+        vistaDos.setVisible(false);
+        vistaGrafica.setVisible(false);
+        vistaTabla.setVisible(false);
         listaPersonas= FXCollections.observableArrayList();
-        initLista();
         desplegable.setTranslateX(-110);
         isDesplegado=false;
         isClaro=true;
+        initLista();
         listView.setItems(listaPersonas);
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listView.getSelectionModel().selectedItemProperty().addListener((observable, ov, nv)->{
             if(nv != null){
             vistaDosController.cargarPersona(nv);
-            vistaDetalle();
+            vistaDos.setVisible(true);
             }
         });
     }
@@ -86,20 +88,22 @@ public class VistaPrincipalController implements Initializable {
     }
 
     private void vistaDetalle(){
-        vistaDosAnidada.setVisible(true);
+        vistaDos.setVisible(true);
     }
 
     @FXML
     private void vistaGrafica(){
-        vistaGraficaAnidada.setVisible(true);
+        vistaGrafica.setVisible(true);
         vistaGraficaController.cargarDatosPieChartGenero(listaPersonas);
         vistaGraficaController.cargarDatosPieChartEspecie(listaPersonas);
+        despliegue();
     }
 
     @FXML
     private void vistaTabla(){
-        vistaTablaAnidada.setVisible(true);
+        vistaTabla.setVisible(true);
         vistaTablaController.cargarTabla(listaPersonas);
+        despliegue();
     }
 
     private void initLista(){
@@ -132,12 +136,12 @@ public class VistaPrincipalController implements Initializable {
     @FXML
     private void cambiarTema(){
         if(!isClaro){
-            ventana.getStylesheets().clear();
-            ventana.getStylesheets().add(this.getClass().getResource("CSS/temaclaro.css").toExternalForm());
+            vistaDos.getStylesheets().clear();
+            vistaDos.getStylesheets().add(this.getClass().getResource("CSS/temaclaro.css").toExternalForm());
             isClaro=true;
         }else{
-            ventana.getStylesheets().clear();
-            ventana.getStylesheets().add(this.getClass().getResource("CSS/temaoscuro.css").toExternalForm());
+            vistaDos.getStylesheets().clear();
+            vistaDos.getStylesheets().add(this.getClass().getResource("CSS/temaoscuro.css").toExternalForm());
             isClaro=false;
         }
         despliegue();

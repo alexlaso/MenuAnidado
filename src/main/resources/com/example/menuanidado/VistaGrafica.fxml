@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<StackPane fx:id="vistaGraficaAnidada" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaGraficaController">
+<StackPane fx:id="vistaGrafica" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaGraficaController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
             <PieChart fx:id="graficaEspecie" title="%grafEsp" />
             <PieChart fx:id="graficaGenero" title="%grafEst" />
          </children>
+         <padding>
+            <Insets left="75.0" />
+         </padding>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
       </VBox>
+      <Button fx:id="btnAtrasG" mnemonicParsing="false" onAction="#volverPrincipalG" text="%btnAtras" StackPane.alignment="TOP_LEFT">
+         <graphic>
+            <FontIcon iconLiteral="fas-chevron-left" />
+         </graphic>
+      </Button>
    </children>
 </StackPane>

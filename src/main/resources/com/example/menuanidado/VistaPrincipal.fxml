@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<?import org.kordamp.ikonli.javafx.FontIcon?>
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaPrincipalController">
+<StackPane fx:id="vistaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaPrincipalController">
    <children>
-      <fx:include fx:id="vistaDosAnidada" source="VistaDos.fxml" />
-      <fx:include fx:id="vistaGraficaAnidada" source="VistaGrafica.fxml"/>
-      <fx:include fx:id="vistaTablaAnidada" source="VistaTabla.fxml"/>
-      <ListView fx:id="listaView" prefHeight="200.0" prefWidth="200.0" />
-   </children>
+   <ListView fx:id="listView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER_RIGHT">
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin></ListView>
+   <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#despliegue" text="%btnMenu" StackPane.alignment="TOP_LEFT" />
    <VBox fx:id="desplegable" maxWidth="110.0" StackPane.alignment="TOP_LEFT">
       <children>
          <ToggleButton fx:id="btnCambio" mnemonicParsing="false" onAction="#cambiarTema" text="%btnTema" VBox.vgrow="ALWAYS">
@@ -18,8 +22,21 @@
                <FontIcon id="icono" iconLiteral="fas-sun" />
             </graphic>
          </ToggleButton>
+         <Button fx:id="btnGrafica" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#vistaGrafica" text="%btnGrafica">
+            <graphic>
+               <FontIcon iconLiteral="fas-chart-pie" />
+            </graphic>
+         </Button>
+         <Button fx:id="btnTabla" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#vistaTabla" text="%btnTabla">
+            <graphic>
+               <FontIcon iconLiteral="fas-table" />
+            </graphic>
+         </Button>
          <Button fx:id="btnSalir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrar" text="%btnSalir" />
       </children>
    </VBox>
-   <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#despliegue" text="%btnMenu" StackPane.alignment="TOP_LEFT" />
+      <fx:include fx:id="vistaGrafica" source="VistaGrafica.fxml" />
+      <fx:include fx:id="vistaDos" source="VistaDos.fxml" />
+      <fx:include fx:id="vistaTabla" source="VistaTabla.fxml" />
+   </children>
 </StackPane>
