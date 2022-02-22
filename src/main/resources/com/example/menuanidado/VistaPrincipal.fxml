@@ -3,9 +3,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaPrincipalController">
    <children>
       <fx:include fx:id="vistaDosAnidada" source="VistaDos.fxml" />
-      <Button fx:id="btnAdelante" alignment="CENTER" mnemonicParsing="false" onAction="#Cambiar" text="Detalle" StackPane.alignment="CENTER" />
+      <fx:include fx:id="vistaGraficaAnidada" source="vistaGrafica.fxml"/>
+      <ListView fx:id="listaView" prefHeight="200.0" prefWidth="200.0" />
    </children>
+   <VBox fx:id="desplegable" maxWidth="110.0" StackPane.alignment="TOP_LEFT">
+      <children>
+         <ToggleButton fx:id="btnCambio" mnemonicParsing="false" onAction="#cambiarTema" text="%btnTema" VBox.vgrow="ALWAYS">
+            <graphic>
+               <FontIcon id="icono" iconLiteral="fas-sun" />
+            </graphic>
+         </ToggleButton>
+         <Button fx:id="btnSalir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrar" text="%btnSalir" />
+      </children>
+   </VBox>
+   <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#despliegue" text="%btnMenu" StackPane.alignment="TOP_LEFT" />
 </StackPane>

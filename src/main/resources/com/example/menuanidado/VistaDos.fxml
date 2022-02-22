@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<StackPane id="porejemplo" fx:id="ventana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" stylesheets="@CSS/temaclaro.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaDosController">
+<StackPane id="porejemplo" fx:id="ventana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" stylesheets="@CSS/temaclaro.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menuanidado.VistaDosController">
    <children>
       <Pane id="fondo" fx:id="fondo" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="TOP_CENTER" />
       <ImageView fx:id="iconoJonDoe" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
@@ -15,21 +15,11 @@
          </StackPane.margin></ImageView>
       <VBox id="letras" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Label id="quieromorir" text="Nombre: Jon Doe" />
-            <Label id="Correo" fx:id="correo" text="Correo: jondoe@example.com" />
-            <Label id="Otros" fx:id="fecha" text="Fecha de nacimiento: 01/01/1996" />
+            <Label id="quieromorir" fx:id="nombrePersona" text="nombre" />
+            <Label id="Correo" fx:id="estadoPersona" text="estado" />
+            <Label id="Otros" fx:id="especiePersona" text="especie" />
+            <Label fx:id="generoPersona" text="genero" />
          </children>
       </VBox>
-      <VBox fx:id="desplegable" maxWidth="110.0" StackPane.alignment="TOP_LEFT">
-         <children>
-            <ToggleButton fx:id="btnCambio" mnemonicParsing="false" onAction="#cambiarTema" text="%btnTema" VBox.vgrow="ALWAYS">
-               <graphic>
-                  <FontIcon id="icono" iconLiteral="fas-sun" />
-               </graphic>
-            </ToggleButton>
-            <Button fx:id="btnSalir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrar" text="%btnSalir" />
-         </children>
-      </VBox>
-      <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#despliegue" text="%btnMenu" StackPane.alignment="TOP_LEFT" />
    </children>
 </StackPane>
